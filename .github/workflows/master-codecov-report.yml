@@ -1,14 +1,13 @@
 name: Master Codecov Report
 
 on:
-  push:
-    branches: [master]
+  workflow_dispatch:
 
 concurrency: ${{ github.workflow }}
 
 jobs:
   report-coverage:
-    runs-on: ubuntu-latest
+    runs-on: dimerun-k3-ubuntu2204
 
     steps:
       - uses: actions/checkout@v4

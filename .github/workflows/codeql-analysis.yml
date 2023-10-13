@@ -12,21 +12,12 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches:
-      - master
-      - 'push-action/**'
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches:
-      - master
-  schedule:
-    - cron: '23 15 * * 2'
+  workflow_dispatch:
 
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-latest
+    runs-on: dimerun-k3-ubuntu2204
     permissions:
       actions: read
       contents: read
