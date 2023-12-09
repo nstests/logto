@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   package:
-    runs-on: dimerun-k3-ubuntu2204
+    runs-on: arc-runner-set
 
     env:
       INTEGRATION_TEST: true
@@ -38,7 +38,7 @@ jobs:
         target: [api, experience, console]
 
     needs: package
-    runs-on: dimerun-k3-ubuntu2204
+    runs-on: arc-runner-set
     env:
       INTEGRATION_TEST: true
       DB_URL: postgres://postgres:postgres@localhost:5432/postgres
