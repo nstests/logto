@@ -16,6 +16,12 @@ if [[ "${IS_CLOUD}" != @(1|true|y|yes|yep|yeah) ]]; then
   rm -rf packages/cloud
 fi
 
+if [[ ! -d ".git" ]]; then
+  pwd
+  ls -l
+  mkdir -p .git
+fi
+
 # Some node packages use `src` as their dist folder, so ignore them from the rm list in the end
 find \
 .git .changeset .devcontainer .github .husky .parcel-cache .scripts .vscode pnpm-*.yaml *.js \
